@@ -1,6 +1,6 @@
-# Really Simple Client/Server Application with NodeJS, SocketIO, Vue and Vuex
+# Really Simple Realtime Client/Server Application with NodeJS, SocketIO, Vue and Vuex
 
-This is a simple example of how to use Vue, Vuex and Socket.io Client with a NodeJS server with Socket.io
+This is a simple example of how to use Vue, Vuex and Socket.io Client with a NodeJS server with Socket.io for a realtine application.
 
 ## Getting Started
 
