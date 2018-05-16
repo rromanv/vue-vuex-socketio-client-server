@@ -32,3 +32,5 @@ cd client/
 npm install
 npm run serve
 ```
+
+By default the client is running in http://localhost:8080
