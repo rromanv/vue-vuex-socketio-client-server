@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h3>{{ $store.state.count }}</h3>
+    <h3>{{ count }}</h3>
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
   </div>
@@ -15,7 +15,27 @@ export default {
   props: {
     msg: String,
   },
-  methods: mapActions(['increment', 'decrement']),
+  sockets: {
+    COUNTER_INCREMENT: function() {
+      this.$store.commit('SOCKET_COUNTER_INCREMENT')
+    },
+    COUNTER_DECREMENT: function() {
+      this.$store.commit('SOCKET_COUNTER_DECREMENT')
+    },
+  },
+  methods: {
+    increment() {
+      this.$store.dispatch('socket_increment')
+    },
+    decrement() {
+      this.$store.dispatch('socket_decrement')
+    },
+  },
+  computed: {
+    count() {
+      return this.$store.state.counterModule.count
+    },
+  },
 }
 </script>
 

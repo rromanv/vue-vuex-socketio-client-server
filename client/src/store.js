@@ -1,22 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import counterModule from './modules/counterModule'
 
 Vue.use( Vuex )
 
 export default new Vuex.Store( {
   state: {
-    count: 0,
+    io: {},
   },
   mutations: {
-    increment ( state ) {
-      state.count++
-    },
-    decrement ( state ) {
-      state.count--
+    setSocket: ( state, socket ) => {
+      state.io = socket
+      console.log( 'socket connected' )
     },
   },
-  actions: {
-    increment: ( { commit } ) => commit( 'increment' ),
-    decrement: ( { commit } ) => commit( 'decrement' ),
+  modules: {
+    counterModule,
   },
 } )
+
